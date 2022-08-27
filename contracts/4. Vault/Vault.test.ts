@@ -10,7 +10,7 @@ describe("Attacking Vault", function () {
     victim = await Victim.deploy(
       ethers.utils.formatBytes32String("A very strong password")
     );
-  });
+      });
 
   // Get this to pass!
   it("Succesfully unlock the vault", async () => {
